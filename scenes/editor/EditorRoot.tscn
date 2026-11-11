@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bhwd46146watb"]
+
+[ext_resource type="Script" path="res://src/App/EditorRoot.cs" id="1_root"]
+
+[node name="EditorRoot" type="Node"]
+script = ExtResource("1_root")

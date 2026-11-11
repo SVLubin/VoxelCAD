@@ -1,0 +1,53 @@
+<Project Sdk="Godot.NET.Sdk/4.7.1">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <RootNamespace>VoxelCAD</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <!-- Generated sources are only auto-excluded while they sit in the intermediate
+       path the current build happens to use. The editor, an isolated tool build
+       and `dotnet build` each pick a different one, so whichever is not current
+       gets globbed as source and its AssemblyInfo collides. Exclude them all. -->
+  <ItemGroup>
+    <Compile Remove=".godot/**" />
+    <Compile Remove="**/obj/**" />
+    <Compile Remove="**/bin/**" />
+  </ItemGroup>
+  <!-- Layer assemblies carry their own .csproj; without these the Godot SDK glob
+       would compile their sources a second time into the main assembly. -->
+  <ItemGroup>
+    <Compile Remove="src/CommonTypes/**" />
+    <Compile Remove="src/Geometry/**" />
+    <Compile Remove="src/Model/**" />
+    <Compile Remove="src/View/**" />
+    <Compile Remove="src/Presenter/**" />
+    <Compile Remove="src/Commands/**" />
+    <Compile Remove="src/Export/**" />
+    <Compile Remove="src/Mcp/**" />
+    <Compile Remove="src/Preferences/**" />
+    <Compile Remove="src/Localization/**" />
+    <Compile Remove="src/Agent/**" />
+    <Compile Remove="src/Render/**" />
+    <Compile Remove="tests/**" />
+    <!-- Scratch space, per AGENTS.md: throwaway C# lives here and must not be
+         compiled into the editor. -->
+    <Compile Remove="tmp/**" />
+    <Compile Remove="tools/**" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="src/CommonTypes/VoxelCAD.CommonTypes.csproj" />
+    <ProjectReference Include="src/Geometry/VoxelCAD.Geometry.csproj" />
+    <ProjectReference Include="src/Model/VoxelCAD.Model.csproj" />
+    <ProjectReference Include="src/View/VoxelCAD.View.csproj" />
+    <ProjectReference Include="src/Presenter/VoxelCAD.Presenter.csproj" />
+    <ProjectReference Include="src/Commands/VoxelCAD.Commands.csproj" />
+    <ProjectReference Include="src/Export/VoxelCAD.Export.csproj" />
+    <ProjectReference Include="src/Mcp/VoxelCAD.Mcp.csproj" />
+    <ProjectReference Include="src/Preferences/VoxelCAD.Preferences.csproj" />
+    <ProjectReference Include="src/Localization/VoxelCAD.Localization.csproj" />
+    <ProjectReference Include="src/Agent/VoxelCAD.Agent.csproj" />
+    <ProjectReference Include="src/Render/VoxelCAD.Render.csproj" />
+  </ItemGroup>
+</Project>

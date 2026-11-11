@@ -1,0 +1,33 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+.dotnet_home/
+.tmp/
+
+# .NET build output
+bin/
+obj/
+
+# Godot SDK intermediates inside layer libraries
+src/*/.godot/
+
+# Scratch space for throwaway files: sample .vcad projects, build scripts,
+# one-off output. Nothing here is committed; clean it up by hand when done.
+tmp/
+*.slnx
+
+# Test host output: trx logs and, when the host dies, a full process crash dump
+# that is gigabytes wide. One of those reached a commit once.
+TestResults/
+*.dmp
+
+
+# Interpreter caches and Finder metadata.
+__pycache__/
+*.pyc
+.DS_Store
+
+# Per-editor agent client configs. The editor writes its own endpoint's config
+# to user://mcp.json with the bearer token in it; a copy kept here would put that
+# token in the repository.
+.cursor/

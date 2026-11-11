@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <!-- Only the .NET 10 runtime is installed locally; the net8.0 testhost needs
+         permission to roll forward onto it. -->
+    <RollForward>LatestMajor</RollForward>
+    <RootNamespace>VoxelCAD.Export.Tests</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+    <PackageReference Include="xunit" Version="2.9.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../src/Export/VoxelCAD.Export.csproj" />
+    <ProjectReference Include="../../src/Model/VoxelCAD.Model.csproj" />
+  </ItemGroup>
+</Project>

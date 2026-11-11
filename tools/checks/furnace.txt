@@ -1,0 +1,48 @@
+# The furnace: a row of white bodies in a uniform room with no sun.
+#
+# A white surface in an environment of one colour must come back at exactly that
+# colour, so every cube here should vanish into the sky behind it. Five metals
+# sweep the roughness, because the compensation that makes them right is a
+# function of it — measured at one roughness the check reads as a small residue
+# whatever it is doing at the others, which is how a defect of +8% at 0.35 and
+# -17% at 1 once survived a run that reported "-2.7% to -5.6%".
+#
+# The sixth is a plain diffuse surface, which the specular compensation does not
+# touch: it is the control that says nothing was over-returned into inventing
+# light.
+#
+# Build it with:
+#   dotnet run --project tools/VoxelCAD.Cli -- --script tools/checks/furnace.txt
+#
+# Then render it from the editor and measure it — the recipe is in docs/render.md
+# under "The energy has been counted".
+
+new size=72,32,32
+
+create-material name=Metal010 color=1,1,1
+set-material-appearance material=Metal010 roughness=0.1 metallic=1
+create-material name=Metal035 color=1,1,1
+set-material-appearance material=Metal035 roughness=0.35 metallic=1
+create-material name=Metal060 color=1,1,1
+set-material-appearance material=Metal060 roughness=0.6 metallic=1
+create-material name=Metal085 color=1,1,1
+set-material-appearance material=Metal085 roughness=0.85 metallic=1
+create-material name=Metal100 color=1,1,1
+set-material-appearance material=Metal100 roughness=1 metallic=1
+create-material name=Matte color=1,1,1
+set-material-appearance material=Matte roughness=1 metallic=0
+
+create-element name=R010 kind=VoxelModel
+fill-box element=R010 from=4,14,14 to=8,18,18 material=Metal010
+create-element name=R035 kind=VoxelModel
+fill-box element=R035 from=14,14,14 to=18,18,18 material=Metal035
+create-element name=R060 kind=VoxelModel
+fill-box element=R060 from=24,14,14 to=28,18,18 material=Metal060
+create-element name=R085 kind=VoxelModel
+fill-box element=R085 from=34,14,14 to=38,18,18 material=Metal085
+create-element name=R100 kind=VoxelModel
+fill-box element=R100 from=44,14,14 to=48,18,18 material=Metal100
+create-element name=Diffuse kind=VoxelModel
+fill-box element=Diffuse from=54,14,14 to=58,18,18 material=Matte
+
+save path=tmp/furnace.vcad

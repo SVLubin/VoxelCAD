@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <RootNamespace>VoxelCAD.Preferences</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <!-- No GodotSharp reference, and none wanted: preferences are files and
+       numbers. The layer that decides where "beside the application" is knows
+       about user://; this one is handed a directory. -->
+  <ItemGroup>
+    <InternalsVisibleTo Include="VoxelCAD.Preferences.Tests" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../CommonTypes/VoxelCAD.CommonTypes.csproj" />
+    <ProjectReference Include="..\Localization\VoxelCAD.Localization.csproj" />
+  </ItemGroup>
+</Project>

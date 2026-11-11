@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>voxelcad</AssemblyName>
+    <TargetFramework>net8.0</TargetFramework>
+    <!-- Only the .NET 10 runtime is installed locally. -->
+    <RollForward>LatestMajor</RollForward>
+    <RootNamespace>VoxelCAD.Cli</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../src/Commands/VoxelCAD.Commands.csproj" />
+    <ProjectReference Include="../../src/Mcp/VoxelCAD.Mcp.csproj" />
+  </ItemGroup>
+</Project>

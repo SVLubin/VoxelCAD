@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__beckett__doctor",
+      "mcp__beckett__get_godot_version",
+      "mcp__beckett__get_play_state",
+      "mcp__beckett__get_performance_monitors",
+      "mcp__beckett__get_project_setting",
+      "mcp__beckett__get_project_statistics",
+      "mcp__beckett__get_remote_tree",
+      "mcp__beckett__get_scene_tree",
+      "mcp__beckett__runtime_get_property",
+      "mcp__beckett__monitor_properties",
+      "mcp__beckett__screenshot",
+      "mcp__beckett__ui_snapshot",
+      "mcp__beckett__game_logs",
+      "mcp__beckett__logs_read",
+      "mcp__beckett__wait_until",
+      "mcp__beckett__wait_for_node",
+      "mcp__beckett__list_dir",
+      "mcp__beckett__read_file",
+      "mcp__beckett__read_script",
+      "mcp__beckett__search_files",
+      "mcp__beckett__find_nodes",
+      "mcp__beckett__find_classes",
+      "mcp__beckett__find_methods",
+      "mcp__beckett__describe_class",
+      "mcp__beckett__describe_object",
+      "mcp__beckett__list_signals",
+      "mcp__beckett__validate_script",
+      "Bash(dotnet build *)",
+      "Bash(dotnet test *)",
+      "Bash(dotnet --version)",
+      "Bash(dotnet --info)"
+    ]
+  }
+}

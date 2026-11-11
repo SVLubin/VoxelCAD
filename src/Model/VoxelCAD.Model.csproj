@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <RootNamespace>VoxelCAD.Model</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="GodotSharp" Version="4.7.1" />
+    <PackageReference Include="YamlDotNet" Version="18.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="VoxelCAD.Model.Tests" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- The sample projects ride inside the assembly, so the editor, the CLI and
+         the tests all read the one file, and an export needs no filter for it. -->
+    <EmbeddedResource Include="../../assets/samples/*.vcad"
+                      LogicalName="VoxelCAD.Samples.%(Filename)%(Extension)" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../CommonTypes/VoxelCAD.CommonTypes.csproj" />
+    <ProjectReference Include="../Geometry/VoxelCAD.Geometry.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <RootNamespace>VoxelCAD.Localization</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <!-- No GodotSharp reference, and none wanted: this layer is strings and the
+       rules for choosing between them. Half the text it answers for is composed
+       in presenters, which are tested without an engine, so an engine-bound
+       lookup could not serve them. -->
+  <ItemGroup>
+    <InternalsVisibleTo Include="VoxelCAD.Localization.Tests" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../CommonTypes/VoxelCAD.CommonTypes.csproj" />
+  </ItemGroup>
+  <!-- The catalogues ship inside the assembly rather than under res://. Godot
+       imports a .po into a .translation resource of its own, which is machinery
+       this layer deliberately does not use; embedding sidesteps the importer
+       entirely, needs no export filter, and is what lets a test read the very
+       bytes the editor will. -->
+  <ItemGroup>
+    <EmbeddedResource Include="Locales/*.po" />
+    <EmbeddedResource Include="Locales/*.pot" />
+  </ItemGroup>
+</Project>

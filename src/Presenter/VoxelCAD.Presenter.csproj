@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <RootNamespace>VoxelCAD.Presenter</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="GodotSharp" Version="4.7.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="VoxelCAD.Presenter.Tests" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../CommonTypes/VoxelCAD.CommonTypes.csproj" />
+    <ProjectReference Include="../Geometry/VoxelCAD.Geometry.csproj" />
+    <ProjectReference Include="../Model/VoxelCAD.Model.csproj" />
+    <ProjectReference Include="../View/VoxelCAD.View.csproj" />
+    <ProjectReference Include="../Render/VoxelCAD.Render.csproj" />
+    <ProjectReference Include="../Commands/VoxelCAD.Commands.csproj" />
+    <ProjectReference Include="../Preferences/VoxelCAD.Preferences.csproj" />
+    <ProjectReference Include="..\Localization\VoxelCAD.Localization.csproj" />
+  </ItemGroup>
+</Project>
